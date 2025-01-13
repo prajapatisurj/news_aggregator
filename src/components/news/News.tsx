@@ -27,10 +27,8 @@ const News: React.FC = () => {
           : `${BASE_URL}top-headlines?category=${selectedCategory}&apiKey=${API_KEY}`;
       const response = await fetch(endpoint);
       const data = await response.json();
-      setTimeout(() => {
-        setArticles(data.articles || []);
-        setLoading(false);
-      }, 1000);
+      setArticles(data.articles || []);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching articles", error);
       setLoading(false);
@@ -51,10 +49,7 @@ const News: React.FC = () => {
         const endpoint = `${BASE_URL}everything?q=${query}&apiKey=${API_KEY}`;
         const response = await fetch(endpoint);
         const data = await response.json();
-        setTimeout(() => {
-          setArticles(data.articles || []);
-          setLoading(false); // Stop loader after 2 seconds
-        }, 2000);
+        setArticles(data.articles || []);
       } catch (error) {
         console.error("Error fetching search results", error);
         setLoading(false);
