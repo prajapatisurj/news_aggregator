@@ -1,0 +1,163 @@
+.mainDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 4rem;
+}
+
+.card {
+    height: 400px;
+    width: 350px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.card .btn {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1 1 auto;
+    min-width: 250px;
+}
+
+.category-select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .mainDiv {
+        margin-top: 5.5rem;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .search-input,
+    .category-select {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .mainDiv {
+        margin-top: 6rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .filters {
+        gap: 5px;
+    }
+
+    .search-input,
+    .category-select {
+        padding: 8px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
+
+    .card .btn {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .mainDiv {
+        margin-top: 7rem;
+    }
+}
